@@ -1,0 +1,21 @@
+quiz_02	mapflag	nocommand	98
+
+geffen,119,59,0	script	aPortalnvsz	45,2,2,{
+
+OnTouch:
+if(BaseLevel == 1 && JobLevel == 1 && Class == 0){ //Detecta Nivel Base, Nivel Job y Clase.
+	atcommand "@storeall"; //Guarda todo el inventario en storage para evitar trampas.
+	atcommand "@allstats -9999";
+	set StatusPoint,0;
+	sc_end -1; //Cancela todo tipo de Buffs para evitar trampas.
+	sc_start 33,600000,10; //Disminuye velocidad para caminar para dificultar más el evento.
+	warp "quiz_02",309,247; //Portal Evento Novice vs Zombie.
+	end;
+	}
+	mes "Solo pueden entrar Novices Nivel 1/1 a este evento.";
+	close;
+	end;
+
+
+
+}
